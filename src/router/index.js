@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-//Pode ser importado de duas formas, essa abaixo.
-import TarefasView from '../views/TarefasView.vue'
 
 Vue.use(VueRouter)
 
@@ -9,13 +7,11 @@ const routes = [
   {
     path: '/',
     name: 'Tarefas',
-    //Referenciando a importação.
-    component: TarefasView
+    component: () => import('../views/TarefasView.vue')
   },
   {
     path: '/sobre',
     name: 'Sobre',
-    //Tbm pode ser importado assim.
     component: () => import('../views/SobreView.vue')
   }
 ]
